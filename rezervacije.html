@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muzej sireva | Dobrodošli</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+    <!--Kad se smanjuje ekran div preleti preko menija-->
+    <header>
+        <div class="navbar">
+            <a href="index.html">Početna</a>
+            <a href="muzej.html">O muzeju</a>
+            <a href="galerija.html">Galerija</a>
+            <a href="#" class="active">Rezervacije</a>
+            <div class="hamburger" onclick="hamburger()">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </header> 
+
+    <div class="rezervacije">
+        <div class="center_res">
+    <div id="div_kontakt">
+        <h1 class="naslov_res">Kontakt</h1>
+        <ul>
+            <li>Muzej sira</li>
+            <li>Adresa: <span id="gugl_mape">Jove Ilića 154</span></li>
+            <li>Radni dani: Pon - Pet</li>
+            <li>Radno vreme: 10:00 - 18:00</li>
+            <li>Kontakt telefon: +381 69 007 3794</li>
+        </ul>
+    </div>
+
+
+    <div id="div_rezervacija">
+        <h1 class="naslov_res">Rezervacije</h1>
+        <form name="form_rezervacija" onsubmit="return validacijaForme()">
+            <label for="ime">Ime:</label><br>
+            <input type="text" name="ime" id="input_ime"><br>
+            <br>
+
+            <label for="prezime">Prezime:</label><br>
+            <input type="text" name="prezime" id="input_prezime"><br>
+            <br>
+
+            <label for="brojPosetilaca">Broj posetilaca:</label><br>
+            <select name="brojPosetilaca" id="input_dropdown">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+            </select><br>
+            <br>
+
+            <label for="uslugeVodica">Da li želite usluge vodiča?</label><br>
+            
+            <input type="radio" name="uslugeVodica" id="input_radio1" value="Da">
+            <label for="uslugeVodica">Da</label>
+            <br>
+
+            <input type="radio" name="uslugeVodica" id="input_radio2" value="Ne" checked>
+            <label for="uslugeVodica">Ne</label>
+            <br>
+            <br>
+
+            <label for="izborObilaska">Koju izložbu želite da obiđete?</label><br>
+            
+            <input type="checkbox" name="izborObilaska" id="input_checkbox1" value="meki_sir">
+            <label for="izborObilaska">Meki sirevi</label>
+            <br>
+            
+            <input type="checkbox" name="izborObilaska" id="input_checkbox2" value="tvrdi_sir">
+            <label for="izborObilaska">Tvrdi sirevi</label>
+            <br>
+            <br>
+            
+
+            <label for="datum">Datum posete:</label><br>
+            <input type="date" name="datum" id="input_date"><br>
+            <br>
+
+            <button class="button_res" type="submit">Rezerviši</button>
+
+        </form>
+        <button class="button_res" onclick="proveriCenu()">Proveri cenu</button>
+        <br>
+        <p id="p_cena"></p>
+   
+    </div>
+    </div>
+</div>
+    <script src="js/script.js"></script>
+</body>
+</html>
